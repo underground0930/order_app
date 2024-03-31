@@ -1,1 +1,32 @@
-admin order_units
+
+<div class="mx-auto my-[100px] w-[1000px]">
+  <div class="flex justify-end mb-5">
+    <form action="">
+      <button class="btn btn-primary">QRを発行</button>
+    </form>
+  </div>
+  <div class="overflow-x-auto">
+    <table class="table w-full">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>code</th>
+          <th>image</th>
+          <th>発行日時</th>
+          <th>会計日時</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% (1..4).each do %>
+        <tr>
+          <td>1</td>
+          <td>xxxxxxxxx</td>
+          <td><%= image_tag 'https://placehold.jp/318x318.png' %></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
