@@ -3,7 +3,7 @@
     <% (1..5).each do %>
       <div class="[&:not(:last-of-type)]:border-b border-[#ccc] p-4 flex items-center">
         <div class="w-[50%]">ビール</div>
-        <div class="w-[30%]">¥1,000</div>
+        <div class="w-[30%] text-right mr-5">¥1,000</div>
         <div class="w-[10%]">
           <%= button_tag "-", class: "btn btn-square btn-outline", type:"button" %>
         </div>
@@ -21,11 +21,5 @@
   </form>
 </div>
 
-<div class="fixed flex w-[1000px] h-[50px] left-0 right-0 bottom-0 m-auto bg-black">
-  <div class="border border-[#ccc] w-[50%] flex items-center justify-center">
-    <%= link_to "注文", "#", {class:"flex items-center justify-center w-full h-full"} %>
-  </div>
-  <div class="border border-[#ccc] w-[50%] flex items-center justify-center">
-    <%= link_to "注文履歴", "#", {class:"flex items-center justify-center w-full h-full"} %>
-  </div>
-</div>
+<%= render "order_units/under_nav" %>
+
