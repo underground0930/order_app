@@ -1,9 +1,7 @@
 
 <div class="mx-auto my-[100px] w-[1000px]">
   <div class="flex justify-end mb-5">
-    <form action="">
-      <button class="btn btn-primary">QRを発行</button>
-    </form>
+    <%= button_to 'QRを発行', admin_order_units_path, class:'btn btn-primary', form: {data: {turbo_confirm: "qrコードを発行します！！"}} %>
   </div>
   <div class="overflow-x-auto">
     <table class="table w-full">
@@ -17,13 +15,13 @@
         </tr>
       </thead>
       <tbody>
-        <% (1..4).each do %>
+        <% @order_units.each do |order_unit| %>
         <tr>
-          <td>1</td>
-          <td>xxxxxxxxx</td>
-          <td><%= image_tag 'https://placehold.jp/318x318.png' %></td>
-          <td></td>
-          <td></td>
+          <td><%= order_unit.id %></td>
+          <td><%= order_unit.code %></td>
+          <td class="bg-white flex justify-center"><%= order_unit.qrcode %></td>
+          <td><%= l order_unit.created_at, format: :long %></td>
+          <td><%= order_unit&.order&.paid_at && l(order_unit.order.paid_at, format: :long) %></td>
         </tr>
         <% end %>
       </tbody>

@@ -1,4 +1,4 @@
 class OrderUnitsController < ApplicationController
-  def order_units
+  def show
   end;
 end
