@@ -4,5 +4,7 @@ class Admin::OrderUnitsController < Admin::BaseController
   end
 
   def create
+    OrderUnit.create!(code: SecureRandom.hex(16))
+    redirect_to admin_order_units_path, success: 'QRコードを発行しました'
   end
 end

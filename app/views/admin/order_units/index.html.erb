@@ -1,9 +1,7 @@
 
 <div class="mx-auto my-[100px] w-[1000px]">
   <div class="flex justify-end mb-5">
-    <form action="">
-      <button class="btn btn-primary">QRを発行</button>
-    </form>
+    <%= button_to 'QRを発行', admin_order_units_path, class:'btn btn-primary', form: {data: {turbo_confirm: "qrコードを発行します！！"}} %>
   </div>
   <div class="overflow-x-auto">
     <table class="table w-full">
