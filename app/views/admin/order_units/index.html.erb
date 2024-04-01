@@ -17,13 +17,13 @@
         </tr>
       </thead>
       <tbody>
-        <% (1..4).each do %>
+        <% @order_units.each do |order_unit| %>
         <tr>
-          <td>1</td>
-          <td>xxxxxxxxx</td>
-          <td><%= image_tag 'https://placehold.jp/318x318.png' %></td>
-          <td></td>
-          <td></td>
+          <td><%= order_unit.id %></td>
+          <td><%= order_unit.code %></td>
+          <td class="bg-white flex justify-center"><%= order_unit.qrcode %></td>
+          <td><%= l order_unit.created_at, format: :long %></td>
+          <td><%= order_unit&.order&.paid_at && l(order_unit.order.paid_at, format: :long) %></td>
         </tr>
         <% end %>
       </tbody>
